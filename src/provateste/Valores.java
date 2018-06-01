@@ -1,11 +1,11 @@
 package provateste;
 
-public class Valor implements ValorITF {
+public class Valores implements ValoresITF {
 
 	private int[] inteiros;
 	private int tamanho = 0;
 	
-	public Valor() {
+	public Valores() {
 		inteiros = new int[10];
 	}
 	
@@ -18,11 +18,11 @@ public class Valor implements ValorITF {
 	}
 
 	@Override
-	public int del(int t) {
+	public int del(int i) {
 		if(size() == 0) return -1;
-		if(!(t < size()))return -1;
-		int retorno = inteiros[t];
-		for(int j = t; j < size(); j++) {
+		if(!(i < size()))return -1;
+		int retorno = inteiros[i];
+		for(int j = i; j < size(); j++) {
 			inteiros[j] = inteiros[j+1];
 		}
 		tamanho--;
@@ -38,8 +38,8 @@ public class Valor implements ValorITF {
 	public double mean() {
 		if(size() == 0) return 0;
 		double media = 0;
-		for(int t = 0; t < size(); t++) {
-			media += inteiros[t];
+		for(int i = 0; i < size(); i++) {
+			media += inteiros[i];
 			
 		}
 		return (media / size());
@@ -49,9 +49,9 @@ public class Valor implements ValorITF {
 	public int greater() {
 		if(size() == 0) return -1;
 		int maior = inteiros[0];
-		for (int t = 0; t < size(); t++) {
-			if(inteiros[t] > maior) {
-				maior = inteiros[t];
+		for (int i = 0; i < size(); i++) {
+			if(inteiros[i] > maior) {
+				maior = inteiros[i];
 			}
 		}
 		return maior;
@@ -61,9 +61,9 @@ public class Valor implements ValorITF {
 	public int lower() {
 		if(size() == 0) return -1;
 		int menor = inteiros[0];
-		for (int t = 0; t < size(); t++) {
-			if(inteiros[t] < menor) {
-				menor = inteiros[t];
+		for (int i = 0; i < size(); i++) {
+			if(inteiros[i] < menor) {
+				menor = inteiros[i];
 			}
 		}
 		return menor;
